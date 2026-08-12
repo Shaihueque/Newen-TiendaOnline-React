@@ -1,0 +1,9 @@
+.containerDerechosRes{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.textDerechos{
+    font-size: x-large;
+}

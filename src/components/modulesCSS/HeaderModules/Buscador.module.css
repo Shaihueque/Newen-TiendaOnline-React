@@ -1,0 +1,10 @@
+.containerBuscadorEscritorio{
+    display: flex;
+    justify-content: center;
+    width: 70%;
+}
+
+.inputBuscador{
+    font-size:x-large;
+    width: 60%;
+}

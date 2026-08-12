@@ -1,0 +1,18 @@
+.containerMenuOp{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.opcionesMenu{
+    font-size: xx-large;
+    text-decoration: none;
+    margin: 1rem;
+    padding: 1rem;
+    color: white;
+}
+
+.activo {
+  border-bottom: 2px solid rgb(221, 219, 219); /* o el color que prefieras */
+  font-weight: bold;
+}

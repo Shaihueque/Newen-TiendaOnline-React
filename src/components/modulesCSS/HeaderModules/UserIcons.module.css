@@ -1,0 +1,8 @@
+.conteinerIcons{
+    display: flex;
+    width: 20%;
+}
+
+.icons{
+    width: 4rem;
+}
