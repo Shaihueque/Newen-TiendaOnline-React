@@ -49,10 +49,11 @@ Si querés clonar y ejecutar este proyecto de forma local:
 
 ## La estructura principal del proyecto se encuentra organizada de la siguiente manera:
 
+## 📁 Estructura del Proyecto
+
+```text
 src/
-│
 ├── components/
-│   │
 │   ├── carrito/
 │   │   ├── Cart.jsx
 │   │   ├── ContenedorCart.jsx
@@ -99,13 +100,15 @@ src/
 │       ├── Menu.jsx
 │       └── UserIcons.jsx
 │
+├── firebase/
+│   ├── config.js
+│   └── db.js
+│
 ├── App.css
 ├── App.jsx
 ├── index.css
-├── main.jsx
-└── firebase/
-    ├── config.js
-    └── db.js
+└── main.jsx
+```
 
 ## 📸 Vista paso a paso de la aplicación
 
