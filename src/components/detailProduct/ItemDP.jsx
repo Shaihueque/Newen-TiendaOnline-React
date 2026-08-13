@@ -1,41 +1,41 @@
-import { useState } from "react"
-import { useContext } from "react"
-import { CountBtnMenos } from "../CountBtnMenos"
-import { CountBtnMas } from "../CountBtnMas"
-import Contador from "../Contador"
+import { useState, useContext } from "react"
 import Styles from "../modulesCSS/DetailProduct/ItemDP.module.css"
-import { ContadorContext } from "../context/ContadorContext"
+import { CartContext } from "../context/CartContext"
 
+function ItemDP({ prod }) {
+    const [count, setCount] = useState(1)
+    const { addToCart } = useContext(CartContext)
 
-function ItemDP({prod}){
-
-    let {contador} = useContext(ContadorContext)
-    // Estado opcional por si querés capturar la cantidad seleccionada en el Counter
-    const [quantity, setQuantity] = useState(1)
-
+    // Protección temprana
     if (!prod) {
         return <p>Cargando producto...</p>
     }
 
     const handleAdd = () => {
-        console.log(`Producto agregado: ${prod.name}, Cantidad: ${quantity}`)
-        /* 
-        if (onAddToCart) {
-            onAddToCart(prod, quantity)
-        } 
-        */
+        addToCart(prod, count)
     }
-    return(
+
+    const handleSumar = () => setCount(count + 1)
+    const handleRestar = () => {
+        if (count > 1) setCount(count - 1)
+    }
+
+    return (
         <div className={Styles.container}>
-            <div className={Styles.containerImg}><img className={Styles.Img} src={prod.img} alt="{prod.name}" /></div>
+            <div className={Styles.containerImg}>
+                <img className={Styles.Img} src={prod.image} alt={prod.name} />
+            </div>
             <div className={Styles.containerDescription}>
                 <h3>{prod.name}</h3>
                 <p>${prod.price}</p>
-                <p>Descripcion</p>
+                <p className={Styles.descriptionText}>
+                    {prod.description}
+                </p>
+                
                 <div className={Styles.containerCant}>
-                <CountBtnMenos className={Styles.btnG}/>
-                <p>Cantidad: {contador}</p>
-                <CountBtnMas/>
+                    <button className={`${Styles.btnG} ${Styles.btnCant}`} onClick={handleRestar}>-</button>
+                    <p>Cantidad: {count}</p>
+                    <button className={`${Styles.btnG} ${Styles.btnCant}`} onClick={handleSumar}>+</button>
                 </div>
                 
                 <button 

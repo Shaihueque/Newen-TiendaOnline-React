@@ -8,11 +8,11 @@ function Menu (){
     return(
         <div className={Styles.containerMenuOp}>
             <NavLink className={handlerActive} to="/">Inicio</NavLink>
-            <NavLink className={handlerActive} to="/categoria/remeras">Remeras</NavLink>
-            <NavLink className={handlerActive} to="/categoria/buzos">Buzos</NavLink>
-            <NavLink className={handlerActive} to="/categoria/hombres">Hombres</NavLink>
-            <NavLink className={handlerActive} to="/categoria/mujeres">Mujeres</NavLink>
-            <NavLink className={handlerActive} to="/categoria/unisex">Unisex</NavLink>
+            <NavLink className={handlerActive} to="/category/remeras">Remeras</NavLink>
+            <NavLink className={handlerActive} to="/category/buzos">Buzos</NavLink>
+            <NavLink className={handlerActive} to="/category/hombres">Hombres</NavLink>
+            <NavLink className={handlerActive} to="/category/mujeres">Mujeres</NavLink>
+            <NavLink className={handlerActive} to="/category/unisex">Unisex</NavLink>
         </div>
     )
 }

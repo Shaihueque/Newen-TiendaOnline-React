@@ -1,32 +1,42 @@
 
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
+import { getProducts } from "../firebase/db" 
 import ItemList from "./ItemList"
-import { products } from "./data/products"
 import Styles from "./modulesCSS/ItemListContainer.module.css"
 
 function ItemListContainer(){
-    let [items, setItems] = useState([])
+    let [products, setProducts] = useState([])
+
+    let [loading, setLoading] = useState(true)
+
     let { categoryId } = useParams()
-
-    useEffect(()=>{
-        if(categoryId){
-            let paramMinuscula = categoryId.toLocaleLowerCase()
-
-            let filtrados = products.filter((prod)=>
-            prod.category.some((cat)=>{
-                let catMinuscula = cat.toLocaleLowerCase()
-
-                return catMinuscula.includes(paramMinuscula) 
-            }))
-            setItems(filtrados)
-        }else {
-            setItems(products)
-        }
-    },[categoryId])
-
-    return <ItemList products={items}/>
     
+    useEffect(() => {
+        setLoading(true)
+
+        getProducts(categoryId)
+            .then((data) => {
+                setProducts(data)
+            })
+            .catch((err) => {
+                console.error("Error al cargar productos:", err)
+            })
+            .finally(() => {
+                setLoading(false)
+            })
+    }, [categoryId])
+
+    if (loading) {
+        return <h2>Cargando productos...</h2>
+    }
+
+    return (
+        <div>
+            {/* Pasa los productos que vinieron de Firebase */}
+            <ItemList products={products} />
+        </div>
+    )
 }
 
 export default ItemListContainer
