@@ -193,4 +193,4 @@ Frontend Developer apasionado por el desarrollo web y la creación de interfaces
 - 📧 **Email:** [shaihueque@gmail.com](mailto:tu-email@gmail.com)
 - 💼 **Portfolio:** [Proximamente](Proximamente)
 - 🐙 **GitHub:** [Ver GitHub](https://github.com/Shaihueque/Newen-TiendaOnline-React.git)
-- 🚀 **Demo:** [Ver aplicación en Vercel](https://tu-proyecto.vercel.app/)
+- 🚀 **Demo:** [Ver aplicación en Vercel](https://newen-tienda-online-react.vercel.app/)
